@@ -4,8 +4,13 @@ from app.api.endpoints import router
 from app.core.db import engine, Base
 from app.core.config import settings
 
-# This line creates all the tables in our database
-Base.metadata.create_all(bind=engine)
+# This block creates all the tables in our database
+try:
+    Base.metadata.create_all(bind=engine)
+    print("Database tables created successfully!")
+except Exception as e:
+    print(f"Database error: {e}")
+    print("Warning: Could not create database tables. Check your DATABASE_URL.")
 
 # start up the FastAPI app!
 app = FastAPI(
