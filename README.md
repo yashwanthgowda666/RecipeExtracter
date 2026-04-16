@@ -1,3 +1,4 @@
+
 # 🍳 RecipeCraft AI — Smart Recipe Extractor & Meal Planner
 
 **RecipeCraft AI** is a full-stack AI-powered application that extracts structured recipe data from blog URLs using web scraping and Large Language Models (LLMs).
@@ -257,3 +258,6 @@ The `sample_data/` folder contains:
 ## 👨‍💻 Author
 
 **Yashwanth Gowda**
+=======
+# RecipeExtracter
+
