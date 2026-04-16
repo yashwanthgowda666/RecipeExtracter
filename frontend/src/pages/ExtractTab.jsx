@@ -29,21 +29,23 @@ const ExtractTab = () => {
         </p>
       </div>
 
-      <form onSubmit={handleFormSubmit} className="relative max-w-2xl mx-auto">
-        <div className="relative flex items-center">
-          <Search className="absolute left-4 h-6 w-6 text-gray-400" />
-          <input
-            type="url"
-            value={recipeUrl}
-            onChange={(e) => setRecipeUrl(e.target.value)}
-            placeholder="https://example.com/recipe-link"
-            required
-            className="block w-full pl-12 pr-32 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-orange-500/20 focus:border-orange-500 shadow-sm transition-all bg-white"
-          />
+      <form onSubmit={handleFormSubmit} className="max-w-2xl mx-auto">
+        <div className="flex flex-col sm:flex-row gap-3">
+          <div className="relative flex-1 flex items-center">
+            <Search className="absolute left-4 h-6 w-6 text-gray-400" />
+            <input
+              type="url"
+              value={recipeUrl}
+              onChange={(e) => setRecipeUrl(e.target.value)}
+              placeholder="https://example.com/recipe-link"
+              required
+              className="block w-full pl-12 pr-4 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-orange-500/20 focus:border-orange-500 shadow-sm transition-all bg-white"
+            />
+          </div>
           <button
             type="submit"
             disabled={recipeMutation.isPending}
-            className="absolute right-2 top-2 bottom-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-xl transition-colors disabled:bg-orange-300 flex items-center"
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-2xl transition-colors disabled:bg-orange-300 flex items-center justify-center shadow-md active:scale-95"
           >
             {recipeMutation.isPending ? (
               <><Loader2 className="w-5 h-5 mr-2 animate-spin" /> Loading...</>

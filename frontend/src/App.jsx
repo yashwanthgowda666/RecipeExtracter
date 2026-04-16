@@ -23,23 +23,23 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router>
         <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
-          <header className="bg-white shadow-sm border-b">
+          <header className="bg-white shadow-sm border-b sticky top-0 z-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between h-16">
-                <div className="flex">
+                <div className="flex w-full">
                   <div className="flex-shrink-0 flex items-center">
                     <ChefHat className="h-8 w-8 text-orange-500" />
-                    <span className="ml-2 font-bold text-xl text-gray-900">My Recipe App</span>
+                    <span className="ml-2 font-bold text-xl text-gray-900 hidden sm:block">My Recipe App</span>
                   </div>
-                  <nav className="ml-6 flex space-x-8">
+                  <nav className="ml-4 sm:ml-6 flex space-x-4 sm:space-x-8 overflow-x-auto no-scrollbar whitespace-nowrap">
                     <NavLink to="/" className={getLinkStyle}>
-                      <Utensils className="h-4 w-4 mr-1"/> Home
+                      <Utensils className="h-4 w-4 mr-1"/> <span className="text-xs sm:text-sm">Home</span>
                     </NavLink>
                     <NavLink to="/history" className={getLinkStyle}>
-                      <Database className="h-4 w-4 mr-1"/> History
+                      <Database className="h-4 w-4 mr-1"/> <span className="text-xs sm:text-sm">History</span>
                     </NavLink>
                     <NavLink to="/planner" className={getLinkStyle}>
-                      <ChefHat className="h-4 w-4 mr-1"/> Planner
+                      <ChefHat className="h-4 w-4 mr-1"/> <span className="text-xs sm:text-sm">Planner</span>
                     </NavLink>
                   </nav>
                 </div>

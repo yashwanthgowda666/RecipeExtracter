@@ -1,3 +1,4 @@
+from datetime import datetime
 from pydantic import BaseModel, HttpUrl
 from typing import List, Optional, Literal, Dict
 
@@ -38,6 +39,7 @@ class RecipeCreate(RecipeBase):
 # used when sending recipe info back to the frontend
 class RecipeInfo(RecipeBase):
     id: int
+    created_at: datetime
 
     class Config:
         from_attributes = True
